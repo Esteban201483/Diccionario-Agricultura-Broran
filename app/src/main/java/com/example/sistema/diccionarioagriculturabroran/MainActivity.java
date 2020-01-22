@@ -1,11 +1,15 @@
 package com.example.sistema.diccionarioagriculturabroran;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
                         if(end - start < 0)
                         {
-                            rightTap(v);
+                            rightSlide(v);
                         }
                         else
                         {
-                            leftTap(v);
+                            leftSlide(v);
                         }
                     }
 
@@ -63,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         );
+
+
+
     }
 
     public void actualizarImagen(ImageView imageView)
@@ -73,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setImageResource(id_imagen);
     }
 
-    public void rightTap(View img)
+    public void rightSlide(View img)
     {
         ImageView imageView = (ImageView) img;
 
@@ -84,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void leftTap(View img)
+    public void leftSlide(View img)
     {
         ImageView imageView = (ImageView) img;
 
@@ -93,5 +100,37 @@ public class MainActivity extends AppCompatActivity {
             actualizarImagen(imageView);
 
         }
+    }
+
+    public void irOpcion(int newIndex)
+    {
+        ImageView img = (ImageView) findViewById(R.id.imageView);
+        index = newIndex;
+        actualizarImagen(img);
+    }
+
+    public void displayMenuList(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Indice");
+
+// add a list
+        String[] animals = {"Portada", "Frutas", "Legumbres", "Herramientas", "Arbustos"};
+        builder.setItems(animals, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:  irOpcion(201);    break;//Portada
+                    case 1:  irOpcion(207);    break;//Frutas
+                    case 2:  irOpcion(211);    break;//Legumbres
+                    case 3:  irOpcion(212);    break;//Herramientas
+                    case 4:  irOpcion(215);    break;//Arbustos
+                }
+            }
+        });
+
+// create and show the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
