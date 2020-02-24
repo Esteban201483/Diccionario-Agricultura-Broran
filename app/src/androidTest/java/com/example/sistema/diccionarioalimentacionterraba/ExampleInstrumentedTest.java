@@ -1,4 +1,4 @@
-package com.example.sistema.diccionarioagriculturabroran;
+package com.example.sistema.diccionarioalimentacionterraba;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

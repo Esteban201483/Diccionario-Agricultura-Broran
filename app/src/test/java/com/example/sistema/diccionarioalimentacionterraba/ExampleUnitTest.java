@@ -1,4 +1,4 @@
-package com.example.sistema.diccionarioagriculturabroran;
+package com.example.sistema.diccionarioalimentacionterraba;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.sistema.diccionarioagriculturabroran;
+package com.example.sistema.diccionarioalimentacionterraba;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -114,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Indice");
 
-// add a list
+
         String[] animals = {"Portada", "Frutas", "Legumbres", "Herramientas", "Arbustos"};
         builder.setItems(animals, new DialogInterface.OnClickListener() {
             @Override
