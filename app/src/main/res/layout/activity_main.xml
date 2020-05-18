@@ -14,15 +14,27 @@
         android:layout_height="fill_parent"
         android:background="#FFFFFF"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:weightSum="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="9"
             android:cropToPadding="true"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/broranso201" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:onClick="displayMenuList"
+            android:text="Menu" />
+
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
