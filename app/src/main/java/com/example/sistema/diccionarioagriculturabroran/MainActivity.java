@@ -126,12 +126,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayMenuList(View v)
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Indice");
 
         String[] animals = {"Portada", "Dŕí ëre dëgué̈i crun̈ roi í", "Zhé̈bo párcocro cró shco",
                 "Pac cró shco", "é̈b", "shtahuó", "c'uofrurún", "Íc", "shúb", "có",
-                "ibín̈, bin̈síhua / québin̈", "srórbo", "t'ú, jóco / jócuo", "dobórba", "Créditos"};
+                "ibín̈, bin̈síhua / québin̈", "srórbo", "t'ú, jóco / jócuo", "dobórba", "Créditos",
+        "Desarrollado por"};
         builder.setItems(animals, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -151,6 +152,19 @@ public class MainActivity extends AppCompatActivity {
                     case 12:  irOpcion(256);    break;//
                     case 13:  irOpcion(258);    break;//dororba
                     case 14:  irOpcion(260);    break;//creditos
+                    case 15:
+                        AlertDialog.Builder developers = new AlertDialog.Builder(builder.getContext());
+                        developers.setMessage("Desarrolladores: \n \n" +
+                                ("Esteban Rojas Solís \n \n" +
+                                        "Daniel Escamilla Leon Paez"))
+                                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                    }
+                                });
+                        developers.create().show();
+                        break;
+
 
                 }
             }
